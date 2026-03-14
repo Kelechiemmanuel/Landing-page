@@ -15,8 +15,8 @@ const icons = {
 const Navbar = () => {
     const [active, setActive] = useState("Home");
     return (
-        <div className="flex justify-center items-center w-full h-full bg-[#101112] py-10">
-            <ul className="flex justify-center items-center gap-10 px-10 py-3 bg-[#292a2b] rounded-xl">
+        <div className="flex justify-center items-center w-full h-full bg-[#131415] py-10 px-20">
+            <ul className="flex justify-center items-center gap-3 px-5 py-2 bg-[#292a2b] rounded-xl">
                 {NavLinks.map((nav) => {
                     const Icon = icons[nav.icon];
                     return (
@@ -28,7 +28,7 @@ const Navbar = () => {
                             > 
                                 <Icon className="w-6 h-6" />
                             </a>
-                            <span className="font-poppins text-sm absolute top-13 hidden group-hover:block text-white">{nav.title}</span>
+                            <span className="font-mono text-sm absolute top-13 hidden group-hover:block text-white">{nav.title}</span>
                         </li>
                     );
                 })}
