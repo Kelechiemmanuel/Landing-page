@@ -15,7 +15,7 @@ const icons = {
 const Navbar = () => {
     const [active, setActive] = useState("Home");
     return (
-        <div className="flex justify-center items-center w-full h-full bg-[#131415] py-10 px-20">
+        <div className="flex justify-center items-center w-full h-full py-10 px-20">
             <ul className="flex justify-center items-center gap-3 px-5 py-2 bg-[#292a2b] rounded-xl">
                 {NavLinks.map((nav) => {
                     const Icon = icons[nav.icon];

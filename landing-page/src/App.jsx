@@ -3,10 +3,11 @@ import Navbar from "./components/Navbar"
 
 const App = () => {
   return (
-    <div>
+    <div className="bg-[#131415]">
       <div>
         <Navbar />
         <Hero />
+        
       </div>
     </div>
     
