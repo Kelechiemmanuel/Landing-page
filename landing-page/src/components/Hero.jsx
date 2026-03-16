@@ -7,8 +7,13 @@ import Projects from "./Projects"
 const Hero = () => {
     return (
         <div>
-            <div className="flex justify-center gap-15  h-screen overflow-hidden">
-                <div className="py-10 px-10 bg-[#292a2b] min-w-20] text-center rounded-xl sticky top-10 h-fit">
+            <div className="flex flex-col items-center px-5 justify-center gap-15
+            lg:flex-row md:px-30
+            lg:h-screen lg:overflow-hidden
+            ">
+                <div className="flex flex-col justify-center items-center py-10 px-10 bg-[#292a2b] min-w-20 text-center rounded-2xl shrink-0
+                lg:sticky lg:top-10 h-fit
+                ">
                     <img src={portfolio} alt="profile-picture" className="w-60 h-60 object-cover rounded-xl" />
                     <div className="mt-10">
                         <h1 className="font-mono font-bold text-2xl text-[#f6f6f6]">Joshua Emmanuel</h1>
@@ -33,10 +38,14 @@ const Hero = () => {
                     </div>
                 </div>
 
-                <div className="py-10 px-10 h-full overflow-y-auto no-scrollbar">
+                <div className="py-10 px-3 h-full overflow-y-auto no-scrollbar
+                md:px-30
+                ">
                     <div>
                         <div className="mb-10">
-                            <h1 className="font-mono font-medium text-7xl text-[#f6f6f6] ">Transforming Your<br /> 
+                            <h1 className="font-mono font-medium text-4xl text-center text-[#f6f6f6] mb-2
+                            lg:text-7xl lg:text-left
+                            ">Transforming Your
                             Ideas into<span className="text-amber-500"> Reality</span>
                             </h1>
                             <p className="text-[#f6f6f6] text-xl">

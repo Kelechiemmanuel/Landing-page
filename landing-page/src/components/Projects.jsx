@@ -30,29 +30,27 @@ const Projects = () => {
             image: template4
         },
     ]
-  return (
-    <div>
+    return (
         <div>
             <div>
-                <h1 className='font-mono font-medium text-6xl text-[#f6f6f6]'>Recent Projects<br /> and <span className='text-amber-500'>Achievements</span></h1>
-            </div>
-
-            <div>
                 <div>
-                    <div>
-                        {cards.map((card) => (
-                            <div key={card.id}>
-                                <img className="w-50" src={card.image} alt="project work" />
-                                <h1>{card.title}</h1>
-                                <p>{card.desc}</p>
+                    <h1 className='font-mono font-medium text-6xl text-[#f6f6f6]'>Recent Projects<br /> and <span className='text-amber-500'>Achievements</span></h1>
+                </div>
+
+                <div className="grid grid-cols-2 justify-items-center gap-5 rounded-xl mt-5 shrink-0">
+                    {cards.map((card) => (
+                        <div key={card.id} className="rounded-2xl">
+                            <img className="w-90 rounded-tl-2xl rounded-tr-2xl" src={card.image} alt="project work" />
+                            <div className="bg-[#292a2b] rounded-bl-2xl rounded-br-2xl px-5 py-7">
+                                <h1 className="text-mono text-[#f6f6f6] font-mono text-4xl">{card.title}</h1>
+                                <p className="text-mono text-[#f6f6f6]">{card.desc}</p>
                             </div>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default Projects
