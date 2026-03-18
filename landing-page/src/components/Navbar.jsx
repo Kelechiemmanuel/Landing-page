@@ -15,18 +15,18 @@ const icons = {
 const Navbar = () => {
     const [active, setActive] = useState("Home");
     return (
-        <div className="flex justify-center items-center w-full h-full py-10 px-20">
-            <ul className="flex justify-center items-center gap-3 px-5 py-2 bg-[#292a2b] rounded-xl">
+        <div className="flex justify-center items-center w-full h-full py-10">
+            <ul className="flex justify-center items-center gap-3 px-12 lg:px-5 lg:gap-5 py-2 bg-[#292a2b] rounded-xl">
                 {NavLinks.map((nav) => {
                     const Icon = icons[nav.icon];
                     return (
                         <li key={nav.id} className="flex justify-center items-center flex-col relative group">
-                            <a href="#" className={`text-white rounded-sm p-2
+                            <a href="#" className={`text-white rounded-sm p-1
                                 ${active === nav.title ? "bg-amber-500" : "hover:bg-amber-500"}
                             `}
                               onClick={() => setActive(nav.title)}
                             > 
-                                <Icon className="w-6 h-6" />
+                                <Icon className="w-5 h-5 md:w-6 md:h-6" />
                             </a>
                             <span className="text-sm absolute top-13 hidden group-hover:block text-white">{nav.title}</span>
                         </li>
