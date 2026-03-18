@@ -1,16 +1,18 @@
-import { Mail, Dribbble, Twitter, Instagram } from "lucide-react"
+import { Mail, Dribbble, Twitter, Instagram, Contact } from "lucide-react"
 import portfolio from "../assets/portfolio.avif"
 import { Outlet } from "react-router-dom"
 import Talk from "./Talk"
-import Work from "./Work"
+import Home from "./Home"
 import Projects from "./Projects"
 import Tools from "./Tools"
 import Experience from "./Experience"
-import { useState } from "react"
 import Thoughts from "./Thoughts"
+import Question from "./Question"
+import Collaboration from "./Collaboration"
 
-const Hero = () => {
-      const [activeComponent, setActiveComponent] = useState("home"); 
+const Hero = ({ activeComponent }) => {
+    const getHighlightClass = (componentName) =>
+        activeComponent === componentName ? "border-4 border-amber-500 rounded-xl p-3" : "";
     return (
         <div>
             <div className="flex justify-center gap-20 w-full
@@ -48,9 +50,12 @@ const Hero = () => {
 
                 <div className="py-10 h-full w-full md:w-full lg:w-[45%]">
                     <Outlet />
-                    <div className="my-20">
-                        <Projects />
-                        <Thoughts />run 
+
+                    <div className={getHighlightClass("Question")}>
+                        <Question />
+                    </div>
+                    <div className={getHighlightClass("Collaboration")}>
+                        <Collaboration />
                     </div>
                 </div>
             </div>

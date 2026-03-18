@@ -1,5 +1,10 @@
 import Talk from "./Talk"
 import Work from "./Work"
+import Projects from "./Projects"
+import Tools from "./Tools"
+import Experience from "./Experience"
+import Thoughts from "./Thoughts"
+import Contact from "./Contact"
 const Home = () => {
   return (
     <div>
@@ -33,10 +38,27 @@ const Home = () => {
           <Talk />
           <Work />
         </div>
+
         <div className="w-full">
           <p className="text-[#f6f6f6] text-sm text-center lg:text-left">
             Relied on by companies near,far, and worldwide
           </p>
+        </div>
+        
+        <div>
+          <Projects />
+        </div>
+        <div>
+          <Tools />
+        </div>
+        <div>
+          <Experience />
+        </div>
+        <div>
+          <Thoughts />
+        </div>
+        <div>
+          <Contact />
         </div>
       </div>
     </div>
