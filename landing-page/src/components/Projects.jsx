@@ -1,3 +1,4 @@
+import { useState } from "react";
 import template1 from "../assets/template1.avif";
 import template2 from "../assets/template2.avif";
 import template3 from "../assets/template3.avif";
