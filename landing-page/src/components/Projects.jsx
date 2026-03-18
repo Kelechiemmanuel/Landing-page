@@ -33,17 +33,20 @@ const Projects = () => {
     return (
         <div>
             <div>
-                <div>
-                    <h1 className='font-medium text-6xl text-[#f6f6f6]'>Recent Projects<br /> and <span className='text-amber-500'>Achievements</span></h1>
+                <div className="text-center md:text-center lg:text-left">
+                    <h1 className='font-bold text-3xl md:text-5xl text-[#f6f6f6]'>Recent Projects<br /> and <span className='text-amber-500'>Achievements</span></h1>
                 </div>
 
-                <div className="gap-5 rounded-xl mt-5 shrink-0">
+                <div className="grid grid-cols-1 justify-items-center gap-5 rounded-xl mt-5
+                md:grid-cols-2 md:px-20 
+                lg:px-0 lg:grid-cols-2
+                ">
                     {cards.map((card) => (
-                        <div key={card.id} className="rounded-2xl">
-                            <img className="w-90 rounded-tl-2xl rounded-tr-2xl" src={card.image} alt="project work" />
+                        <div key={card.id} className="rounded-2xl w-full">
+                            <img className="w-full h-70 rounded-tl-2xl rounded-tr-2xl object-cover" src={card.image} alt="project work" />
                             <div className="bg-[#292a2b] rounded-bl-2xl rounded-br-2xl px-5 py-7">
-                                <h1 className="text-[#f6f6f6] text-4xl">{card.title}</h1>
-                                <p className="text-[#f6f6f6]">{card.desc}</p>
+                                <h1 className="text-mono text-[#f6f6f6] font-mono text-4xl">{card.title}</h1>
+                                <p className="text-mono text-[#f6f6f6]">{card.desc}</p>
                             </div>
                         </div>
                     ))}

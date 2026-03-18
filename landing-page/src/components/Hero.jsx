@@ -3,52 +3,53 @@ import portfolio from "../assets/portfolio.avif"
 import Talk from "./Talk"
 import Work from "./Work"
 import Projects from "./Projects"
+import Tools from "./Tools"
 
 const Hero = () => {
     return (
         <div>
-            <div className="flex justify-center items-center gap-10 w-full 
+            <div className="flex justify-center gap-20 w-full h-fit
             flex-col px-5
             lg:flex-row
-            m
+            md:px-30
             ">
-                <div className="flex flex-col justify-center items-center py-10 px-20 bg-[#292a2b]  text-center  rounded-2xl shrink-0
-                md:px-60
-                lg:px-10 
+                <div className="flex flex-col justify-center items-center py-10 px-20 my-10 bg-[#292a2b]  text-center rounded-2xl top-10 h-full 
+                md:px-60 
+                lg:px-7 lg:sticky
                 ">
-                    <img src={portfolio} alt="profile-picture" className="w-60 h-60 object-cover rounded-xl" />
+                    <img src={portfolio} alt="profile-picture" className="w-60 h-70 object-top rounded-xl" />
                     <div className="mt-10">
-                        <h1 className="font-bold text-2xl text-[#f6f6f6]">Joshua Emmanuel</h1>
+                        <h1 className="font-bold text-2xl lg:text-3xl text-[#f6f6f6]">Joshua Emmanuel</h1>
                         <p className="text-[#f6f6f6] text-sm">Product Designer & Developer <br /> Lagos, Nigeria</p>
                     </div>
                     <div className="flex gap-5 justify-center items-center my-5">
-                        <button className="text-[#f6f6f6] bg-none hover:bg-amber-500 p-1 rounded-sm cursor-pointer">
+                        <button className="text-[#f6f6f6] bg-none hover:bg-amber-500 p-1 rounded-sm cursor-pointer outline-0">
                             <Mail className="w-6 h-6" />
                         </button>
-                        <button className="text-[#f6f6f6] bg-none hover:bg-amber-500 p-1 rounded-sm cursor-pointer">
+                        <button className="text-[#f6f6f6] bg-none hover:bg-amber-500 p-1 rounded-sm cursor-pointer outline-0">
                             <Dribbble className="w-6 h-6" />
                         </button>
-                        <button className="text-[#f6f6f6] bg-none hover:bg-amber-500 p-1 rounded-sm cursor-pointer">
+                        <button className="text-[#f6f6f6] bg-none hover:bg-amber-500 p-1 rounded-sm cursor-pointer outline-0">
                             <Twitter className="w-6 h-6" />
                         </button>
-                        <button className="text-[#f6f6f6] bg-none hover:bg-amber-500 p-1 rounded-sm cursor-pointer">
+                        <button className="text-[#f6f6f6] bg-none hover:bg-amber-500 p-1 rounded-sm cursor-pointer outline-0">
                             <Instagram className="w-6 h-6" />
                         </button>
                     </div>
-                    <div className="mt-5">
-                       <Talk />
+                    <div className="mt-10">
+                        <Talk />
                     </div>
                 </div>
 
-                <div className="py-10 h-full w-full md:w-[60%] lg:w-[45%]">
+                <div className="py-10 h-full w-full md:w-full lg:w-[45%]">
                     <div className="w-full">
                         <div className="mb-10 text-center lg:text-left">
                             <h1 className="font-semibold text-4xl md:text-5xl lg:text-6xl text-[#f6f6f6] mb-5">Transforming Your
-                            Ideas into<span className="text-amber-500"> Reality</span>
+                                Ideas into<span className="text-amber-500"> Reality</span>
                             </h1>
-                            <p className="text-[#f6f6f6] text-sm lg:text-[15px] w-140">
+                            <p className="text-[#f6f6f6] text-sm lg:text-[15px]">
                                 Passionate about creating intuitive and engaging user experiences.
-                                 Specialize in transforming ideas into beautifully crafted products.
+                                Specialize in transforming ideas into beautifully crafted products.
                             </p>
                         </div>
                         <div className="grid grid-cols-3 justify-items-center text-center mb-10 w-full 
@@ -69,17 +70,18 @@ const Hero = () => {
                         </div>
                         <div className="flex gap-10 justify-center items-center lg:justify-start mb-20">
                             <Talk />
-                            <Work/>
+                            <Work />
                         </div>
                         <div className="w-full">
-                            <p className="text-[#f6f6f6] text-sm text-center">
+                            <p className="text-[#f6f6f6] text-sm text-center lg:text-left">
                                 Relied on by companies near,far, and worldwide
                             </p>
                         </div>
                     </div>
-                    {/* <div className="my-20">
+                    <div className="my-20">
                         <Projects />
-                    </div> */}
+                         <Tools />
+                    </div>
                 </div>
             </div>
         </div>

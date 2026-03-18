@@ -1,5 +1,6 @@
 import Hero from "./components/Hero"
 import Navbar from "./components/Navbar"
+import Tools from "./components/Tools"
 
 const App = () => {
   return (
@@ -7,7 +8,6 @@ const App = () => {
       <div>
         <Navbar />
         <Hero />
-        
       </div>
     </div>
     
