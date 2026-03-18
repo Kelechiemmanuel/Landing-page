@@ -28,7 +28,7 @@ const Navbar = () => {
                             > 
                                 <Icon className="w-6 h-6" />
                             </a>
-                            <span className="font-mono text-sm absolute top-13 hidden group-hover:block text-white">{nav.title}</span>
+                            <span className="text-sm absolute top-13 hidden group-hover:block text-white">{nav.title}</span>
                         </li>
                     );
                 })}

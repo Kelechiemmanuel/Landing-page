@@ -7,17 +7,12 @@ import Projects from "./Projects"
 const Hero = () => {
     return (
         <div>
-            <div className="flex flex-col items-center px-5 justify-center gap-15
-            lg:flex-row md:px-30
-            lg:h-screen lg:overflow-hidden
-            ">
-                <div className="flex flex-col justify-center items-center py-10 px-10 bg-[#292a2b] min-w-20 text-center rounded-2xl shrink-0
-                lg:sticky lg:top-10 h-fit
-                ">
+            <div className="flex justify-center items-center gap-10 w-full">
+                <div className="flex flex-col justify-center items-center py-10 px-10 bg-[#292a2b]  text-center rounded-2xl shrink-0">
                     <img src={portfolio} alt="profile-picture" className="w-60 h-60 object-cover rounded-xl" />
                     <div className="mt-10">
-                        <h1 className="font-mono font-bold text-2xl text-[#f6f6f6]">Joshua Emmanuel</h1>
-                        <p className="font-mono text-[#f6f6f6]">Product Designer & Developer <br /> Lagos, Nigeria</p>
+                        <h1 className="font-bold text-2xl text-[#f6f6f6]">Joshua Emmanuel</h1>
+                        <p className="text-[#f6f6f6]">Product Designer & Developer <br /> Lagos, Nigeria</p>
                     </div>
                     <div className="flex gap-5 justify-center items-center my-5">
                         <button className="text-[#f6f6f6] bg-none hover:bg-amber-500 p-1 rounded-sm cursor-pointer">
@@ -38,22 +33,18 @@ const Hero = () => {
                     </div>
                 </div>
 
-                <div className="py-10 px-3 h-full overflow-y-auto no-scrollbar
-                md:px-30
-                ">
+                <div className="py-10 px-3 h-full w-[45%]">
                     <div>
                         <div className="mb-10">
-                            <h1 className="font-mono font-medium text-4xl text-center text-[#f6f6f6] mb-2
-                            lg:text-7xl lg:text-left
-                            ">Transforming Your
+                            <h1 className="font-semibold text-6xl text-[#f6f6f6] mb-5">Transforming Your <br />
                             Ideas into<span className="text-amber-500"> Reality</span>
                             </h1>
-                            <p className="text-[#f6f6f6] text-xl">
+                            <p className="text-[#f6f6f6]">
                                 Passionate about creating intuitive and engaging user experiences.<br />
                                  Specialize in transforming ideas into beautifully crafted products.
                             </p>
                         </div>
-                        <div className="grid grid-cols-3 mb-10">
+                        <div className="grid grid-cols-3 mb-10 w-[90%]">
                             <div>
                                 <h1 className="font-bold text-[#f6f6f6] text-7xl">+12</h1>
                                 <p className="text-[#f6f6f6] text-xl">YEARS OF <br />EXPERIENCE</p>
@@ -72,14 +63,14 @@ const Hero = () => {
                             <Work/>
                         </div>
                         <div>
-                            <p className="font-mono text-[#f6f6f6] text-xl">
+                            <p className="text-[#f6f6f6]">
                                 Relied on by companies near, far, and worldwide
                             </p>
                         </div>
                     </div>
-                    <div className="my-20">
+                    {/* <div className="my-20">
                         <Projects />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
