@@ -20,7 +20,7 @@ const Hero = ({ activeComponent }) => {
             lg:flex-row
             md:px-30
             ">
-                <div className="flex flex-col justify-center items-center py-10 px-20 my-10 bg-[#292a2b]  text-center rounded-2xl top-10 h-full 
+                <div className="flex flex-col justify-center items-center py-10 px-20 my-10 bg-[#292a2b]  text-center rounded-2xl top-14 h-full 
                 md:px-60 
                 lg:px-7 lg:sticky
                 ">

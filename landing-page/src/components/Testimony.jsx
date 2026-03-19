@@ -66,7 +66,7 @@ const Testimony = () => {
 
                 <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
                     {slides.map((slide) => (
-                        <div key={slide.id} className="w-full shrink-0 p-6 bg-[#2c2d2e] rounded-xl">
+                        <div key={slide.id} className="w-full shrink-0 py-10 px-6 bg-[#2c2d2e] rounded-xl">
                             <div className="flex items-center gap-4 mb-4 rounded-2xl">
                                 <img src={slide.image} alt="" className="w-16 h-16 rounded-full object-cover" />
                                 <h1 className="text-xl font-bold text-white">
