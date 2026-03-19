@@ -19,7 +19,7 @@ const Contact = () => {
           </div>
           <div>
             <label className='text-white'>Message</label> <br />
-            <textarea name="message" id="message" cols="68" rows="5" placeholder='You Message' className='bg-[#494a4b] mt-2 p-3 text-white rounded-sm outline-1 outline-amber-500'></textarea>
+            <textarea name="message" id="message" cols="68" rows="5" placeholder='You Message' className='bg-[#494a4b] mt-2 p-3 text-white rounded-sm outline-1 outline-amber-500 w-full'></textarea>
           </div>
           <button className='w-full bg-amber-500 p-3 text-white rounded-sm cursor-pointer'>Send</button>
         </form>
