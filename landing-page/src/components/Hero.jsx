@@ -15,7 +15,7 @@ const Hero = ({ activeComponent }) => {
         activeComponent === componentName ? "border-4 border-amber-500 rounded-xl p-3" : "";
     return (
         <div>
-            <div className="flex justify-center gap-20 w-full
+            <div className="flex justify-center gap-20 w-full shrink-0 
             flex-col px-5
             lg:flex-row
             md:px-30
@@ -24,7 +24,9 @@ const Hero = ({ activeComponent }) => {
                 md:px-60 
                 lg:px-7 lg:sticky
                 ">
-                    <img src={portfolio} alt="profile-picture" className="w-60 h-70 object-top rounded-xl" />
+                    <div className="flex shrink-0 justify-center items-center">
+                        <img src={portfolio} alt="profile-picture" className="w-60 h-70 object-top rounded-xl shrink-0" />
+                    </div>
                     <div className="mt-10">
                         <h1 className="font-bold text-2xl lg:text-3xl text-[#f6f6f6]">Joshua Emmanuel</h1>
                         <p className="text-[#f6f6f6] text-sm">Product Designer & Developer <br /> Lagos, Nigeria</p>

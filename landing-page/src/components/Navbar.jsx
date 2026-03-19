@@ -23,13 +23,13 @@ const Navbar = () => {
                     return (
                         <li key={nav.id} className="flex justify-center items-center flex-col relative group">
                             <Link to={nav.path} className={`text-white rounded-sm p-1
-                                ${active === nav.title ? "bg-amber-500" : "hover:bg-amber-500"}
+                                ${active === nav.title ? "bg-amber-500" : "hover:bg-amber-500 transition-all duration-500 ease-in-out" }
                             `}
                               onClick={() => setActive(nav.title)}
                             > 
-                                <Icon className="w-5 h-5 md:w-6 md:h-6" />
+                                <Icon className="w-5 h-5 md:w-6 md:h-6 transition-transform duration-1000 ease-in-out hover:scale-110" />
                             </Link>
-                            <span className="text-sm absolute top-13 hidden group-hover:block text-white">{nav.title}</span>
+                            <span className="bg-[#292a2b] py-1 px-2 rounded-sm text-sm absolute top-11 hidden group-hover:block text-white">{nav.title}</span>
                         </li>
                     );
                 })}

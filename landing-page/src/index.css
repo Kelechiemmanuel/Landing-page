@@ -4,13 +4,15 @@ body {
   font-family: "Poppins", sans-serif;
   font-style: normal;
 }
-
-/* Hide scrollbar */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.slide-track {
+  animation: scroll 20s linear infinite;
 }
