@@ -14,7 +14,7 @@ const Hero = ({ activeComponent }) => {
             initial={{ opacity: 0, y: 50 }} 
             animate={{ opacity: 2, y: -12 }}
             exit={{ opacity: 0, y: -50 }}
-            transition={{ duration: 2, ease: "easeOut", type: "spring", bounce: 0.5  }}
+            transition={{ duration: 2, ease: "easeOut" }}
         >
             <div className="flex justify-center gap-20 w-full shrink-0 
             flex-col px-5
