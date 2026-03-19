@@ -1,4 +1,5 @@
 import {ArrowRight } from "lucide-react"
+import { Link } from "react-router-dom"
 
 const Collaboration = () => {
   return (
@@ -9,6 +10,7 @@ const Collaboration = () => {
                 <div className='flex justify-center items-center w-15 h-15 rounded-full bg-amber-500 group-hover:bg-white transition-all duration-500 ease-in-out relative group'>
                     <ArrowRight className="text-white rotate-300 group-hover:translate-x-20 group-hover:hidden"/>
                     <ArrowRight className="absolute left-0 top-0 hidden group-hover:top-[30%] group-hover:block text-amber-500 rotate-300 transition-all duration-500 group-hover:translate-x-4"/>
+                    <Link to="/contact"></Link>
                 </div>
             </div>
             <div className="w-[90%]">

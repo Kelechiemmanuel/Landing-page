@@ -9,12 +9,18 @@ import Experience from "./Experience"
 import Thoughts from "./Thoughts"
 import Question from "./Question"
 import Collaboration from "./Collaboration"
+import { motion } from "framer-motion"
 
 const Hero = ({ activeComponent }) => {
     const getHighlightClass = (componentName) =>
         activeComponent === componentName ? "border-4 border-amber-500 rounded-xl p-3" : "";
     return (
-        <div>
+        <motion.div
+            initial={{ opacity: 0, y: 50 }} 
+            animate={{ opacity: 2, y: -12 }}
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ duration: 2, ease: "easeOut"  }}
+        >
             <div className="flex justify-center gap-20 w-full shrink-0 
             flex-col px-5
             lg:flex-row
@@ -61,7 +67,7 @@ const Hero = ({ activeComponent }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
