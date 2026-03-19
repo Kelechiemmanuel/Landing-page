@@ -30,6 +30,18 @@ const Projects = () => {
             desc: "Modern Framer Template",
             image: template4
         },
+        {
+            id: 5,
+            title: "ABJAD",
+            desc: "Modern Framer Template",
+            image: template4
+        },
+        {
+            id: 6,
+            title: "ABJAD",
+            desc: "Modern Framer Template",
+            image: template4
+        },
     ]
     return (
             <div className="mb-20">

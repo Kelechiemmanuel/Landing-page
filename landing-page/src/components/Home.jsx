@@ -6,7 +6,12 @@ import Experience from "./Experience"
 import Thoughts from "./Thoughts"
 import Contact from "./Contact"
 import Sponsors from "./Sponsors"
+import Testimony from "./Testimony"
+import portfolio from "../assets/portfolio.avif"
+import Dell from "../assets/Dell.png"
+import Amazon from "../assets/Amazon.png"
 const Home = () => {
+  const slides = [ portfolio, Dell, Amazon ];
   return (
     <div>
       <div className="w-full">
@@ -54,6 +59,9 @@ const Home = () => {
         </div>
         <div>
           <Tools />
+        </div>
+        <div>
+          <Testimony slides={slides}/>
         </div>
         <div>
           <Experience />
