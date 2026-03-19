@@ -39,12 +39,12 @@ const Home = () => {
           <Work />
         </div>
 
-        <div className="w-full">
+        <div className="w-full mb-20">
           <p className="text-[#f6f6f6] text-sm text-center lg:text-left">
             Relied on by companies near,far, and worldwide
           </p>
         </div>
-        
+
         <div>
           <Projects />
         </div>

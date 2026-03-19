@@ -32,8 +32,7 @@ const Projects = () => {
         },
     ]
     return (
-        <div>
-            <div>
+            <div className="mb-20">
                 <div className="text-center md:text-center lg:text-left">
                     <h1 className='font-bold text-3xl md:text-5xl text-[#f6f6f6]'>Recent Projects<br /> and <span className='text-amber-500'>Achievements</span></h1>
                 </div>
@@ -44,7 +43,7 @@ const Projects = () => {
                 ">
                     {cards.map((card) => (
                         <div key={card.id} className="rounded-2xl w-full">
-                            <img className="w-full h-70 rounded-tl-2xl rounded-tr-2xl object-cover" src={card.image} alt="project work" />
+                            <img className="w-full h-60 rounded-tl-2xl rounded-tr-2xl object-cover" src={card.image} alt="project work" />
                             <div className="bg-[#292a2b] rounded-bl-2xl rounded-br-2xl px-5 py-7">
                                 <h1 className="text-mono text-[#f6f6f6] font-mono text-4xl">{card.title}</h1>
                                 <p className="text-mono text-[#f6f6f6]">{card.desc}</p>
@@ -53,7 +52,6 @@ const Projects = () => {
                     ))}
                 </div>
             </div>
-        </div>
     )
 }
 
