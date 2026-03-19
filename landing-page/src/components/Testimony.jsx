@@ -44,7 +44,7 @@ const Testimony = () => {
     };
 
     return (
-        <div className="w-full max-w-3xl mx-auto">
+        <div className="w-full max-w-3xl mx-auto mb-20">
             <div className="text-center lg:text-left my-20">
                 <h1 className='font-bold text-3xl md:text-5xl text-white'>
                     What Clients Say <br />
@@ -52,13 +52,13 @@ const Testimony = () => {
                 </h1>
             </div>
             <div className="flex justify-end gap-5 my-3">
-                <button onClick={prevSlide} className="h-10 w-10 flex items-center justify-center border border-amber-500 text-white rounded-full hover:bg-amber-500 transition">
+                <button onClick={prevSlide} className="h-10 w-10 flex items-center cursor-pointer justify-center border border-amber-500 text-white rounded-full hover:bg-amber-500 transition">
                     &#8592;
                 </button>
 
                 <button
                     onClick={nextSlide}
-                    className="h-10 w-10 flex items-center justify-center border border-amber-500 text-white rounded-full hover:bg-amber-500 transition">
+                    className="h-10 w-10 flex items-center justify-center cursor-pointer border border-amber-500 text-white rounded-full hover:bg-amber-500 transition">
                     &#8594;
                 </button>
             </div>
@@ -73,7 +73,6 @@ const Testimony = () => {
                                     {slide.title}
                                 </h1>
                             </div>
-
                             <p className="text-white text-sm">
                                 {slide.description}
                             </p>
