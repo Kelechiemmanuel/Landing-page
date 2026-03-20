@@ -10,10 +10,29 @@ import Testimony from "./Testimony"
 import portfolio from "../assets/portfolio.avif"
 import Dell from "../assets/Dell.png"
 import Amazon from "../assets/Amazon.png"
+import Spinner from "./Spinner"
+import { useEffect, useState } from "react"
+import { motion } from "framer-motion"
+
+
 const Home = () => {
-  const slides = [ portfolio, Dell, Amazon ];
+  const slides = [portfolio, Dell, Amazon];
+  const [loading, setLoading] = useState(true);
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 2000);
+  // }, [])
+
+  // if (loading) return <Spinner />
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 50, scale: 0.98 }}
+      animate={{ opacity: 3, y: -12, scale: 1 }}
+      exit={{ opacity: 0, y: -50, scale: 0.98 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
       <div className="w-full">
         <div className="mb-10 text-center lg:text-left">
           <h1 className="font-semibold text-4xl md:text-5xl lg:text-6xl text-[#f6f6f6] mb-5">Transforming Your
@@ -61,7 +80,7 @@ const Home = () => {
           <Tools />
         </div>
         <div>
-          <Testimony slides={slides}/>
+          <Testimony slides={slides} />
         </div>
         <div>
           <Experience />
@@ -73,7 +92,7 @@ const Home = () => {
           <Contact />
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

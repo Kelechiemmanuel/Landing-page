@@ -1,11 +1,14 @@
 @import "tailwindcss";
 
-body {
+
+html, body, #root {
   font-family: "Poppins", sans-serif;
   font-style: normal;
+  height: 100%;
+  margin: 0;
+  background-color: #131415;
 }
 
-/* Hide scrollbar */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -15,11 +18,11 @@ body {
   scrollbar-width: none;
 }
 
-
 @keyframes scroll {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }

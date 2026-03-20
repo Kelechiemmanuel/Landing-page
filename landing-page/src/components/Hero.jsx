@@ -1,19 +1,34 @@
 import { Mail, Dribbble, Twitter, Instagram, Contact } from "lucide-react"
 import portfolio from "../assets/portfolio.avif"
-import { Outlet } from "react-router-dom"
+import { Outlet, useLocation } from "react-router-dom"
 import Talk from "./Talk"
 import Question from "./Question"
 import Collaboration from "./Collaboration"
 import { motion } from "framer-motion"
+import Spinner from "./Spinner"
+import { useEffect, useState } from "react"
 
 const Hero = ({ activeComponent }) => {
     const getHighlightClass = (componentName) =>
         activeComponent === componentName ? "border-4 border-amber-500 rounded-xl p-3" : "";
+
+    const [loading, setLoading] = useState(true);
+    const location = useLocation();
+
+    useEffect(() => {
+
+        setLoading(true);
+        const timer = setTimeout(() => {
+            setLoading(false)
+        }, 500);
+        return () => clearTimeout(timer);
+    }, [location.pathname]);
+    if (loading) return <Spinner />
     return (
         <motion.div
-            initial={{ opacity: 0, y: 50 }} 
-            animate={{ opacity: 2, y: -12 }}
-            exit={{ opacity: 0, y: -50 }}
+            initial={{ opacity: 0, y: 50, scale: 0.98 }}
+            animate={{ opacity: 2, y: -12, scale: 1 }}
+            exit={{ opacity: 0, y: -50, scale: 0.98 }}
             transition={{ duration: 2, ease: "easeOut" }}
         >
             <div className="flex justify-center gap-20 w-full shrink-0 
@@ -21,8 +36,8 @@ const Hero = ({ activeComponent }) => {
             lg:flex-row
             md:px-30
             ">
-                <div className="flex flex-col justify-center items-center py-10 px-20 my-10 bg-[#292a2b]  text-center rounded-2xl top-14 h-full 
-                md:px-60 
+                <div className="flex flex-col justify-center items-center py-10 px-20 my-10 bg-[#292a2b] text-center rounded-2xl top-14 h-full 
+                md:px-20 
                 lg:px-7 lg:sticky
                 ">
                     <div className="flex shrink-0 justify-center items-center">
@@ -51,16 +66,32 @@ const Hero = ({ activeComponent }) => {
                     </div>
                 </div>
 
-                <div className="py-10 h-full w-full md:w-full lg:w-[45%]">
-                    <Outlet />
+                <motion.div className="py-10 h-full w-full md:w-full lg:w-[45%]"
+                >
+                    {loading ? (
+                        <Spinner />
+                    ) : (
+                        <motion.div
+                            key={location.pathname}
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{
+                                type: "spring",
+                                stiffness: 120,
+                                damping: 14
+                            }}
+                        >
+                            <Outlet />
 
-                    <div className={getHighlightClass("Question")}>
-                        <Question />
-                    </div>
-                    <div className={getHighlightClass("Collaboration")}>
-                        <Collaboration />
-                    </div>
-                </div>
+                            <div className={getHighlightClass("Question")}>
+                                <Question />
+                            </div>
+                            <div className={getHighlightClass("Collaboration")}>
+                                <Collaboration />
+                            </div>
+                        </motion.div>
+                    )}
+                </motion.div>
             </div>
         </motion.div>
     )

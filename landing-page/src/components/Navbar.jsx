@@ -28,7 +28,17 @@ const Navbar = () => {
                             <motion.li key={nav.id} className="flex justify-center items-center flex-col relative group"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1.5 }}
-                                transition={{ duration: 1, ease: "easeOut" }}
+                                // transition={{ duration: 1, ease: "easeOut" }}
+                                whileHover={{
+                                    y: -1,
+                                    scale: 1.1
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                                transition={{
+                                    type: "spring",
+                                    stiffness: 300,
+                                    damping: 10, duration: 1, ease: "easeOut"
+                                }}
                             >
                                 <Link to={nav.path} className={`text-white rounded-sm p-1
                                 ${active === nav.title ? "bg-amber-500" : "hover:bg-amber-500 transition-all duration-500 ease-in-out"}

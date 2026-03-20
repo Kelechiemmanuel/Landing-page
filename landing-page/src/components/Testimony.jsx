@@ -1,5 +1,6 @@
 import { useState } from "react"
 import portfolio from "../assets/portfolio.avif"
+import { motion } from "framer-motion"
 
 const Testimony = () => {
     const slides = [
@@ -66,7 +67,17 @@ const Testimony = () => {
 
                 <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
                     {slides.map((slide) => (
-                        <div key={slide.id} className="w-full shrink-0 py-10 px-6 bg-[#2c2d2e] rounded-xl">
+                        <motion.div key={slide.id} className="w-full shrink-0 py-10 px-6 bg-[#2c2d2e] rounded-xl hover:rounded-xl"
+                          whileHover={{ scale: 1.05, y: -5 }}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{
+                                type: "spring",
+                                bounce: 0.3,
+                                duration: 0.6
+                            }}
+                            viewport={{ once: true }}
+                        >
                             <div className="flex items-center gap-4 mb-4 rounded-2xl">
                                 <img src={slide.image} alt="" className="w-16 h-16 rounded-full object-cover" />
                                 <h1 className="text-xl font-bold text-white">
@@ -76,7 +87,7 @@ const Testimony = () => {
                             <p className="text-white text-sm">
                                 {slide.description}
                             </p>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
