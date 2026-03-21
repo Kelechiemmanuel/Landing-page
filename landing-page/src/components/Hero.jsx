@@ -7,7 +7,7 @@ import Collaboration from "./Collaboration"
 import { motion } from "framer-motion"
 import Spinner from "./Spinner"
 import { useEffect, useState } from "react"
-
+import { Link } from "react-router-dom"
 const Hero = ({ activeComponent }) => {
     const location = useLocation();
     const isHome = location.pathname === "/";
@@ -38,8 +38,8 @@ const Hero = ({ activeComponent }) => {
             md:px-30
             ">
                 <div className={`flex flex-col justify-center items-center  ${isHome ? "flex" : "hidden"} py-10 px-20 my-10 bg-[#292a2b] text-center rounded-2xl top-14 h-full
-                md:px-20 
-                lg:px-7 lg:sticky  lg:flex 
+                md:px-20 md:flex
+                lg:px-7 lg:sticky  lg:flex
     `}>
                     <div className="flex shrink-0 justify-center items-center">
                         <img src={portfolio} alt="profile-picture" className="w-60 h-70 object-top rounded-xl shrink-0" />
@@ -90,7 +90,9 @@ const Hero = ({ activeComponent }) => {
                                 <Question />
                             </div>
                             <div className={getHighlightClass("Collaboration")}>
-                                <Collaboration />
+                               <Link to="contact">
+                                 <Collaboration />
+                               </Link>
                             </div>
                         </motion.div>
                     )}
