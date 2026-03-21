@@ -32,6 +32,9 @@ const Home = () => {
       animate={{ opacity: 3, y: -12, scale: 1 }}
       exit={{ opacity: 0, y: -50, scale: 0.98 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+
     >
       <div className="w-full">
         <div className="mb-10 text-center lg:text-left">
@@ -82,15 +85,15 @@ const Home = () => {
         <div>
           <Testimony slides={slides} />
         </div>
-        <div>
+        {/* <div>
           <Experience />
-        </div>
+        </div> */}
         <div>
           <Thoughts />
         </div>
-        <div>
+        {/* <div>
           <Contact />
-        </div>
+        </div> */}
       </div>
     </motion.div>
   )

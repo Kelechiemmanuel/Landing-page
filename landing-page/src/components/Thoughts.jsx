@@ -4,6 +4,7 @@ import image2 from "../assets/image2.png";
 import image3 from "../assets/image3.png";
 import image4 from "../assets/image4.jpg";
 import image5 from "../assets/image5.jpg";
+import { motion } from 'framer-motion';
 
 
 const Thoughts = () => {
@@ -46,7 +47,12 @@ const Thoughts = () => {
     },
   ]
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true }}
+    >
       <div className="text-center md:text-center lg:text-left my-5">
         <h1 className='font-bold text-3xl md:text-5xl text-[#f6f6f6]'>Design Thoughts<br /> and <span className='text-amber-500'>Perspectives</span></h1>
       </div>
@@ -67,7 +73,7 @@ const Thoughts = () => {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   )
 }
 

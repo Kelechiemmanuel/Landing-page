@@ -59,7 +59,9 @@ const Projects = () => {
             initial={{ opacity: 0, y: 50, scale: 0.98 }}
             animate={{ opacity: 3, y: -12, scale: 1 }}
             exit={{ opacity: 0, y: -50, scale: 0.98 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
+            transition={{ duration: 2, ease: "easeOut" }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
         >
             <div className="text-center md:text-center lg:text-left">
                 <h1 className='font-bold text-3xl md:text-5xl text-[#f6f6f6]'>Recent Projects<br /> and <span className='text-amber-500'>Achievements</span></h1>

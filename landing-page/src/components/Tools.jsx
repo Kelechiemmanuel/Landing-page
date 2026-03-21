@@ -5,6 +5,7 @@ import icon3 from "../assets/icon3.png"
 import icon7 from "../assets/icon7.png"
 import icon5 from "../assets/icon5.png"
 import icon6 from "../assets/icon6.png"
+import { motion } from 'framer-motion'
 
 const Tools = () => {
 
@@ -53,7 +54,12 @@ const Tools = () => {
     }
   ]
   return (
-    <div className=''>
+    <motion.div className=''
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true }}
+    >
       <div className="text-center md:text-center lg:text-left">
         <h1 className='font-bold text-3xl md:text-5xl text-[#f6f6f6]'>Top-Tier Tools for<br /> Exceptional <span className='text-amber-500'>Results</span></h1>
       </div>
@@ -61,7 +67,7 @@ const Tools = () => {
         {cards.map((card) => (
           <div key={card.id} className='flex bg-[#2c2d2e] w-full px-5 py-4 hover:bg-amber-500 transition-all duration-500 ease-in-out justify-center items-center gap-5 rounded-[10px]'>
             <div>
-               <img src={card.image} alt="Tools" className='w-15'/>
+              <img src={card.image} alt="Tools" className='w-15' />
             </div>
             <div className='w-full'>
               <h1 className='font-semibold text-2xl text-white'>{card.name}</h1>
@@ -71,7 +77,7 @@ const Tools = () => {
         ))}
 
       </div>
-    </div>
+    </motion.div>
   )
 }
 

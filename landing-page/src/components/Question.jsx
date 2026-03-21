@@ -1,4 +1,5 @@
 import { ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
 import { useState } from "react";
 
 const Question = () => {
@@ -35,7 +36,12 @@ const Question = () => {
         },
     ]
     return (
-        <div className="my-25">
+        <motion.div className="my-25"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 2, ease: "easeOut" }}
+            viewport={{ once: true }}
+        >
             <div className="text-center md:text-center lg:text-left">
                 <h1 className='font-bold text-3xl md:text-5xl text-[#f6f6f6]'>Frequently <br /> Asked <span className='text-amber-500'>Questions</span></h1>
             </div>
@@ -57,7 +63,7 @@ const Question = () => {
 
                 </div>
             ))}
-        </div>
+        </motion.div>
     )
 }
 

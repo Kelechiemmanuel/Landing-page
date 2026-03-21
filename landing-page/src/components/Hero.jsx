@@ -8,9 +8,14 @@ import { motion } from "framer-motion"
 import Spinner from "./Spinner"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+
+
+
+
 const Hero = ({ activeComponent }) => {
     const location = useLocation();
     const isHome = location.pathname === "/";
+    const isContact = location.pathname === "/contact"
     const getHighlightClass = (componentName) =>
         activeComponent === componentName ? "border-4 border-amber-500 rounded-xl p-3" : "";
 
@@ -31,6 +36,8 @@ const Hero = ({ activeComponent }) => {
             animate={{ opacity: 2, y: -12, scale: 1 }}
             exit={{ opacity: 0, y: -50, scale: 0.98 }}
             transition={{ duration: 2, ease: "easeOut" }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
         >
             <div className="flex justify-center gap-20 w-full shrink-0 
             flex-col px-5
@@ -89,11 +96,14 @@ const Hero = ({ activeComponent }) => {
                             <div className={getHighlightClass("Question")}>
                                 <Question />
                             </div>
-                            <div className={getHighlightClass("Collaboration")}>
-                               <Link to="contact">
-                                 <Collaboration />
-                               </Link>
-                            </div>
+
+                            {!isContact && (
+                                <div className={getHighlightClass("Collaboration")}>
+                                    <Link to="contact">
+                                        <Collaboration />
+                                    </Link>
+                                </div>
+                            )}
                         </motion.div>
                     )}
                 </motion.div>
