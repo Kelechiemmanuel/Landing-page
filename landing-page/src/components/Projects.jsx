@@ -72,7 +72,7 @@ const Projects = () => {
                 lg:px-0 lg:grid-cols-2
                 ">
                 {cards.map((card) => (
-                    <div key={card.id} className="rounded-2xl w-full group overflow-hidden">
+                    <div key={card.id} className="rounded-2xl w-full group overflow-hidden cursor-pointer">
                         <div className="overflow-hidden">
                             <img className="w-full h-60 rounded-tl-2xl rounded-tr-2xl object-cover transition-transform duration-500 group-hover:scale-110" src={card.image} alt="project work" />
                         </div>
