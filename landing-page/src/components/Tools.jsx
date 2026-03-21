@@ -80,18 +80,18 @@ const Tools = () => {
       <div className="text-center md:text-center lg:text-left">
         <h1 className='font-bold text-3xl md:text-5xl text-[#f6f6f6]'>Top-Tier Tools for<br /> Exceptional <span className='text-amber-500'>Results</span></h1>
       </div>
-      <div className="grid grid-cols-1 justify-items-center gap-5 rounded-xl mt-5 md:grid-cols-2 md:px-20 lg:px-0 lg:grid-col-2 cursor-pointer">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 gap-5 rounded-xl mt-5 cursor-pointer">
         {cards.map((card) => {
           return (
-            <div key={card.id} className='flex flex-col bg-[#2c2d2e] w-full px-5 py-4 hover:bg-amber-500 transition-all duration-500 ease-in-out justify-center items-center gap-5 rounded-[10px]'
+            <div key={card.id} className='flex flex-wrap bg-[#2c2d2e] w-full px-2 pr-6 py-4 hover:bg-amber-500 transition-all duration-500 ease-in-out rounded-[10px]'
               onClick={() => handleClick(card.id)}
             >
-              <div className='w-full flex gap-2 px-2 '>
-                <div>
-                  <img src={card.image} alt="Tools" className='w-15' />
+              <div className='flex justify-start gap-3 w-full'>
+                <div className='flex shrink-0'>
+                  <img src={card.image} alt="Tools" className='w-13 shrink-0' />
                 </div>
                 <div className='w-full'>
-                  <h1 className='font-semibold text-2xl text-white'>{card.name}</h1>
+                  <h1 className='font-semibold text-[15px] text-white'>{card.name}</h1>
                   <p className='text-[12px] text-white w-full'>{card.description}</p>
                 </div>
               </div>
