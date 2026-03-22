@@ -7,6 +7,7 @@ import icon5 from "../assets/icon5.png"
 import icon6 from "../assets/icon6.png"
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import SiteFlow from './SiteFlow'
 import Pixelo from './Pixelo'
 import Juice from './Juice'
@@ -15,11 +16,18 @@ import Note from './Note'
 import Web from './Web'
 
 const Tools = () => {
+  const location = useLocation();
   const [active, setActive] = useState(null);
 
   const handleClick = (id) => {
     setActive(active === id ? null : id);
   };
+
+  useEffect(() => {
+    if (location.state?.id) {
+      setActive(location.state.id); // 🔥 open correct component
+    }
+  }, [location.state]);
 
   const cards = [
     {
@@ -80,28 +88,10 @@ const Tools = () => {
       <div className="text-center md:text-center lg:text-left">
         <h1 className='font-bold text-3xl md:text-5xl text-[#f6f6f6]'>Top-Tier Tools for<br /> Exceptional <span className='text-amber-500'>Results</span></h1>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 gap-5 rounded-xl mt-5 cursor-pointer">
-        {cards.map((card) => {
-          return (
-            <div key={card.id} className='flex flex-wrap bg-[#2c2d2e] w-full px-2 pr-6 py-4 hover:bg-amber-500 transition-all duration-500 ease-in-out rounded-[10px]'
-              onClick={() => handleClick(card.id)}
-            >
-              <div className='flex justify-start gap-3 w-full'>
-                <div className='flex shrink-0'>
-                  <img src={card.image} alt="Tools" className='w-13 shrink-0' />
-                </div>
-                <div className='w-full'>
-                  <h1 className='font-semibold text-[15px] text-white'>{card.name}</h1>
-                  <p className='text-[12px] text-white w-full'>{card.description}</p>
-                </div>
-              </div>
-            </div>
-          )
-        })}
-      </div>
       <div className="col-span-full mt-5">
         <AnimatePresence mode="wait">
           {cards.map((card) => {
+            if (active !== card.id) return null;
             const ActiveComponent = card.explanation;
             return (
               active === card.id && (
@@ -120,6 +110,26 @@ const Tools = () => {
           })}
         </AnimatePresence>
       </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 gap-5 rounded-xl mt-5">
+        {cards.map((card) => {
+          return (
+            <div key={card.id} className='flex flex-wrap bg-[#2c2d2e] w-full px-2 pr-6 py-4 hover:bg-amber-500 transition-all duration-500 ease-in-out rounded-[10px]'
+              onClick={() => handleClick(card.id)}
+            >
+              <div className='flex justify-start gap-3 w-full cursor-pointer'>
+                <div className='flex shrink-0'>
+                  <img src={card.image} alt="Tools" className='w-13 shrink-0' />
+                </div>
+                <div className='w-full'>
+                  <h1 className='font-semibold text-[15px] text-white'>{card.name}</h1>
+                  <p className='text-[12px] text-white w-full'>{card.description}</p>
+                </div>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+
     </motion.div>
   )
 }

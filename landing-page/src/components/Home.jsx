@@ -10,14 +10,67 @@ import Testimony from "./Testimony"
 import portfolio from "../assets/portfolio.avif"
 import Dell from "../assets/Dell.png"
 import Amazon from "../assets/Amazon.png"
+import icon1 from "../assets/icon1.png"
+import icon2 from "../assets/icon2.png"
+import icon3 from "../assets/icon3.png"
+// import icon4 from "../assets/icon4.png"
+import icon5 from "../assets/icon5.png"
+import icon6 from "../assets/icon6.png"
+import icon7 from "../assets/icon7.png"
 import Spinner from "./Spinner"
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { motion } from "framer-motion"
 
 
 const Home = () => {
   const slides = [portfolio, Dell, Amazon];
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
+  const handleClick = (id) => {
+    navigate("/tools", { state: { id } });
+  };
+
+  const cards = [
+    {
+      id: 1,
+      name: "SiteFlow",
+      image: icon2,
+      description: "Website Builder",
+    },
+    {
+      id: 2,
+      name: "Pixelo",
+      image: icon1,
+      description: "Design Tool",
+    },
+    {
+      id: 3,
+      name: "JuiceBox",
+      image: icon3,
+      description: "Payment Provider",
+    },
+    {
+      id: 4,
+      name: "TalkAI",
+      image: icon5,
+      description: "AI Assistant",
+    },
+    {
+      id: 5,
+      name: "NoteSpace",
+      image: icon6,
+      description: "Productivity Tool",
+    },
+    {
+      id: 6,
+      name: "WebCraft",
+      image: icon7,
+      description: "React Framework",
+
+    }
+  ];
 
   // useEffect(() => {
   //   setTimeout(() => {
@@ -79,8 +132,23 @@ const Home = () => {
         <div>
           <Projects />
         </div>
-        <div>
-          <Tools />
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 gap-5 rounded-xl mt-5">
+          {cards.map((card) => (
+            <div key={card.id} className='flex flex-wrap bg-[#2c2d2e] w-full px-2 pr-6 py-4 hover:bg-amber-500 transition-all duration-500 ease-in-out rounded-[10px]'
+              onClick={() => handleClick(card.id)}
+            >
+              <div className='flex justify-start gap-3 w-full cursor-pointer'>
+                <div className='flex shrink-0'>
+                  <img src={card.image} alt="Tools" className='w-13 shrink-0' />
+                </div>
+                <div className='w-full'>
+                  <h1 className='font-semibold text-[15px] text-white'>{card.name}</h1>
+                  <p className='text-[12px] text-white w-full'>{card.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+          {/* <Tools /> */}
         </div>
         <div>
           <Testimony slides={slides} />
