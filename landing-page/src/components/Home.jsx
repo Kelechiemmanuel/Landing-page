@@ -25,7 +25,7 @@ import { motion } from "framer-motion"
 
 const Home = () => {
   const slides = [portfolio, Dell, Amazon];
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   const handleClick = (id) => {
